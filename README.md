@@ -96,7 +96,7 @@ Benchmark inserts items into Hazelcast Map for one hour on single node:
     }
 ```
 
-It tested Hazelcast 3.2 on 64bit Kubuntu 14.04 with JVM 64bit Oracle JVM 1.7.0_51 with 32GB RAM.
+It tested Hazelcast 3.2 on 64bit Kubuntu 14.04 with J64bit Oracle JVM 1.7.0_51 with 32GB RAM.
 
 Unpatched Hazelcast ran with 25GB heap: `-Xmx25G`. After 30 minutes it ran out of free heap and freezed with GC consuming 100% CPU. 
 
@@ -123,4 +123,4 @@ Also other data types such as Queues and Locks are on-heap.
  
 In future we may extend this patch to other HC data structures and make HC completely off-heap. 
 It would be great to merge this patch into upstream Hazelcast. 
-Patching classes at runtime with Java Agent is limited, so we may also create fork Hazelcast in future. 
+Patching classes at runtime with Java Agent is limited, so we may also fork Hazelcast in future. 
