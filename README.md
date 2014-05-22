@@ -43,8 +43,6 @@ This patch was tested with Hazelcast 3.1 and 3.2 and JVM 6,7,8. It does not work
 There are two components. First add library into your Maven dependencies. It contains serializers and some helper methods.
 If you are not using Maven, you will also need MapDB library.
 
-TODO links to jars after publishing
-
 ```xml
     <dependencies>
         <dependency>
@@ -56,7 +54,7 @@ TODO links to jars after publishing
 ```
 
 Secondly download `mapdb-hz-offheap-0.8-javaagent.jar` and use it as `-javaagent` for JVM. It will patch Hazelcast
-to use MapDB collections 
+to use MapDB collections. Jar files can be downloaded from [maven central](http://repo1.maven.org/maven2/org/mapdb/mapdb-hz-offheap). 
 
 Also do not forget to increase off-heap memory for Direct ByteBuffers with JVM switch: `-XX:MaxDirectMemorySize=25G`
 
