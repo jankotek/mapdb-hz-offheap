@@ -1,4 +1,4 @@
-This project offers off-heap store for Hazelcast Maps. Inside HZ it replaces `ConcurrentHashMap`  with off-heap HTreeMap from MapDB. 
+This project offers off-heap store for Hazelcast Maps. Inside HZ it replaces `ConcurrentHashMap`  with off-heap `HTreeMap` from MapDB. 
 It is independent from other off-heap solutions and is free under Apache License 2.0 with no hooks attached. 
   
 
@@ -7,8 +7,8 @@ Intro
 HC uses Java maps for its internal data structures. Those are visible to Garbage Collector and do not scale well 
  with large number of items. MapDB offers off-heap collections not affected by GC. This project combines Hazelcast and MapDB together.
   
-This project makes very simple patch inside Hazelcast. At class `com.hazelcast.map.DefaultRecordStore` it replaces value of 
-map `records` with MapDB collection::
+This project makes very simple change inside Hazelcast. At class `com.hazelcast.map.DefaultRecordStore` it replaces value of 
+map `records` with MapDB collection:
  
 ```java
 
@@ -30,8 +30,8 @@ map `records` with MapDB collection::
             .make();
 ```
 
-It also provides Java Agent which instruments Hazelcast classes while they are loading. 
-So there is no need to maintain HC fork.  
+It also provides Java Agent to instrumens Hazelcast classes directly while they are loading. 
+So there is no need to deploy specialized fork.
  
 
 
