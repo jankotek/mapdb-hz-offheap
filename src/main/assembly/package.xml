@@ -1,0 +1,27 @@
+<!-- 
+	Pack a full jar inclusive javassist and slf4j classes.
+ -->
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+	
+	<id>javaagent</id>
+	
+	<formats>
+		<format>jar</format>
+	</formats>
+
+	<includeBaseDirectory>false</includeBaseDirectory>
+
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<useProjectArtifact>true</useProjectArtifact>
+			<useStrictFiltering>true</useStrictFiltering>
+			<unpack>true</unpack>
+			<includes>
+				<include>org.mapdb:mapdb-hz-offheap:*</include>
+				<include>org.javassist:javassist</include>
+			</includes>			
+		</dependencySet>
+	</dependencySets>
+</assembly>
