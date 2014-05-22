@@ -1,4 +1,4 @@
-This project privides off-heap storage for Hazelcast Maps. Inside HZ it replaces `ConcurrentHashMap`  with off-heap `HTreeMap` from MapDB. 
+This project provides off-heap storage for Hazelcast Maps. Inside HZ it replaces `ConcurrentHashMap`  with off-heap `HTreeMap` from MapDB. 
 It is independent from other off-heap solutions and is free under Apache License 2.0 with no hooks attached. 
   
 
