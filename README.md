@@ -30,8 +30,8 @@ map `records` with MapDB collection:
             .make();
 ```
 
-It also provides Java Agent to instrumens Hazelcast classes directly while they are loading. 
-So there is no need to deploy specialized fork.
+It also provides Java Agent to instrumens Hazelcast classes at runtime  while they are loading. 
+So there is no need to swap Hazelcast binaries. 
  
 
 
@@ -53,8 +53,7 @@ If you are not using Maven, you will also need MapDB library.
     </dependencies>
 ```
 
-Secondly download `mapdb-hz-offheap-0.8-javaagent.jar` and use it as `-javaagent` for JVM. It will patch Hazelcast
-to use MapDB collections. Jar files can be downloaded from [maven central](http://search.maven.org/#browse%7C1316374908). 
+Secondly download `mapdb-hz-offheap-0.8-javaagent.jar` and use it as `-javaagent` for JVM. When JVM starts, it will intercept class loading and patch Hazelcast classes to use MapDB collections. Jar files can be downloaded from [maven central](http://search.maven.org/#browse%7C1316374908). 
 
 Also do not forget to increase off-heap memory for Direct ByteBuffers with JVM switch: `-XX:MaxDirectMemorySize=25G`
 
