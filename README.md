@@ -98,16 +98,16 @@ Benchmark inserts items into Hazelcast Map for one hour on single node:
 
 It tested Hazelcast 3.2 on 64bit Kubuntu 14.04 with J64bit Oracle JVM 1.7.0_51 with 32GB RAM.
 
-Unpatched Hazelcast ran with 25GB heap: `-Xmx25G`. After 30 minutes it ran out of free heap and freezed with GC consuming 100% CPU. 
+Original version ran with 25GB heap: `-Xmx25G`. After 30 minutes all memory was used and Garbage Collector kicked in consuming 100% CPU. No GC tuning was applied, that could probably fix this issue. 
 
 Off-heap version ran with 128MB heap and 25GB off-heap: `-Xmx128M -XX:MaxDirectMemorySize=25G`. It maintained constant 
 insert speed for duration of experiment (1 hour). GC usage was always bellow 1%
 
 Results:
 
-*Unpatched Hazelcast* inserted  81.8 million items over 30 minutes. It consumed 19.4 GB of heap memory. It could not finish experiment due to GC overhead. 
+Unpatched Hazelcast inserted  81.8 million items over 30 minutes. It consumed 19.4 GB of heap memory. After 30 minutes experiment was stopped due to excesive GC.
 
-*mapdb-hz-offheap* inserted 90.7 millions items over one hour. It consumed 60MB of heap and 9.8 GB of total memory as shown in Process Explorer. 
+mapdb-hz-offheap inserted 90.7 millions items over one hour. It consumed 60MB of heap and 9.8 GB of total memory as shown in Process Explorer. 
 It finished experiment without any performance degradation, it should scale to 100GB+ without problems.   
 
 
