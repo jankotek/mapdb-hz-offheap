@@ -1,3 +1,10 @@
+NOTE:
+=========
+this project is unmaintained. 3.4+ is more complex, I can not use agent injection. I might fork Hazelcast in future to add mapdb support. Bot for next 3+ moths stable 2.0 release is priority.
+
+Hz
+=====
+
 This project provides off-heap storage for Hazelcast Maps. Inside HZ it replaces `ConcurrentHashMap`  with off-heap `HTreeMap` from MapDB. 
 It is independent from other off-heap solutions and is free under Apache License 2.0 with no hooks attached. 
   
