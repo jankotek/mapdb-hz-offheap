@@ -1,7 +1,7 @@
 package org.mapdb.hzoffheap;
 
-import com.hazeclast.map.record.MapDBDataRecordSerializer;
-import com.hazelcast.nio.serialization.MapDBDataSerializer;
+import com.hazelcast.map.impl.record.MapDBDataRecordSerializer;
+import com.hazelcast.map.impl.record.MapDBDataSerializer;
 import org.mapdb.DBMaker;
 
 import java.util.concurrent.ConcurrentMap;
@@ -28,11 +28,10 @@ public class HzOffheap {
 
 
         return DBMaker
-                .newMemoryDirectDB()
+                .memoryDirectDB()
                 .transactionDisable()
-                .cacheDisable()
                 .make()
-                .createHashMap("recods")
+                .hashMapCreate("recods")
                 .keySerializer(new MapDBDataSerializer())
                 .valueSerializer(new MapDBDataRecordSerializer())
                 .counterEnable()

@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class HzOffheapAgent implements ClassFileTransformer {
 
-    static final String DEFAULT_RECORD_STORE ="com/hazelcast/map/DefaultRecordStore";
+    static final String DEFAULT_RECORD_STORE ="com/hazelcast/map/impl/AbstractRecordStore";
 
 
     static final Logger LOG = Logger.getLogger(HzOffheapAgent.class.getName());
