@@ -4,7 +4,7 @@
 
     <groupId>org.mapdb</groupId>
     <artifactId>mapdb-hz-offheap</artifactId>
-    <version>3.5.A</version>
+    <version>3.5-SNAPSHOT</version>
 
     <name>mapdb-hz-offheap</name>
     <description>Provides off-heap storage for in-memory datagrid build in Turkey.</description>
